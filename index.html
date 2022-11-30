@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>metax ads</title>
+    <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+</head>
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #gameContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <div id="gameContainer">
+        <div onclick="loadAd()">点我获取广告</div>
+    </div>
+</body>
+<script src="./ad.js"></script>
+<script>
+    var options = {
+        debug: true,
+        adsTest: true,
+        adsStart: function() {
+            console.log("ad start")
+        },
+        adsSuccess: function() {
+            console.log('ad success')
+        },
+		adsError:function(){
+			console.log('ad Error')
+		},
+		adsEnd:function(){
+			console.log('----end-----')
+		}
+    }
+    var videoAdsCode = "cp_qyx_rewarded_001";
+    MetaxAds.init(videoAdsCode, options);
+
+    function loadAd() {
+        console.log('请求激励广告');
+        MetaxAds.loadAds();
+    }
+</script>
+
+</html>

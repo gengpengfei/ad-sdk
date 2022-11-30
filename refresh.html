@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+<body>
+    <!-- /22245529461/cp_xykj_banner_001 -->
+    <script>
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                var strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        // <!-- width & height -->
+        var width = parseInt(window.innerWidth * 0.1);
+        var height = parseInt(window.innerHeight * 0.6);
+        var width2 = parseInt(window.innerWidth * 0.3);
+        var height2 = parseInt(window.innerHeight * 0.1);
+        // <!-- url example ： https://xxx.com/?pn=bGludXhfdjE&cp=dXhfdjE -->
+        var options = new Object();
+        options = GetRequest();
+        var cp = options.cp;
+        var pn = options.pn;
+        var slot1, slot2, slot3;
+        googletag.cmd.push(function() {
+            slot1 = googletag.defineSlot('/22245529461/cp_xykj_banner_001', [width, height], 'div-gpt-ad-1642510542945-1').addService(googletag.pubads());
+            slot2 = googletag.defineSlot('/22245529461/cp_xykj_banner_002', [width, height], 'div-gpt-ad-1642510542945-2').addService(googletag.pubads());
+            slot3 = googletag.defineSlot('/22245529461/cp_xykj_banner_003', [width2, height2], 'div-gpt-ad-1642510542945-3').addService(googletag.pubads());
+            googletag.enableServices();
+        });
+        googletag.pubads().collapseEmptyDivs();
+        googletag.pubads().setTargeting('cp', [cp]).setTargeting('pn', [pn]);
+        googletag.pubads().disableInitialLoad();
+
+        setTimeout(function() {
+            googletag.pubads().refresh([slot1, slot2]);
+        }, 1000)
+
+        setInterval(function() {
+            googletag.pubads().refresh([slot1, slot2]);
+        }, 90000);
+
+        function showTopAd() {
+            googletag.pubads().refresh([slot3]);
+            document.getElementById("div-gpt-ad-1642510542945-3").setAttribute("style", "display:block;z-index: 9;position: absolute;top: 30%;left: 35%;");
+        }
+
+        function hiddenTopAd() {
+            document.getElementById("div-gpt-ad-1642510542945-3").setAttribute("style", "display:none");
+        }
+    </script>
+    <div id='div-gpt-ad-1642510542945-1' style="z-index: 9;position: absolute;left: 0;top: 20%;">
+        <script>
+            googletag.cmd.push(function() {
+                googletag.display('div-gpt-ad-1642510542945-1');
+            });
+        </script>
+    </div>
+    <div id='div-gpt-ad-1642510542945-2' style="z-index: 9;position: absolute;right: 0;top: 20%;">
+        <script>
+            googletag.cmd.push(function() {
+                googletag.display('div-gpt-ad-1642510542945-2');
+            });
+        </script>
+    </div>
+    <div id='div-gpt-ad-1642510542945-3' style="z-index: 9;position: absolute;top: 30%;left: 35%;display:none;">
+        <script>
+            googletag.cmd.push(function() {
+                googletag.display('div-gpt-ad-1642510542945-3');
+            });
+        </script>
+    </div>
+
+
+</body>
+
+</html>

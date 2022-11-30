@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+</head>
+
+<body>
+    <div>
+        <script>
+            function GetRequest() {
+                var url = location.search;
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    var strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+            // <!-- width & height -->
+            var width = parseInt(window.innerWidth * 0.9);
+            var height = parseInt(window.innerHeight * 0.12);
+            // <!-- url example ： https://xxx.com/?pn=bGludXhfdjE&cp=dXhfdjE -->
+            var options = new Object();
+            options = GetRequest();
+            var cp = options.cp;
+            var pn = options.pn;
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/22245529461/cp_qyx_banner_001', [width, height], 'div-gpt-ad-1642510542945-0').addService(googletag.pubads());
+                googletag.defineSlot('/22245529461/cp_qyx_banner_002', [width, height], 'div-gpt-ad-1642510542945-1').addService(googletag.pubads());
+                googletag.enableServices();
+            });
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().setTargeting('cp', [cp]).setTargeting('pn', [pn]);
+        </script>
+
+        <div id='div-gpt-ad-1642510542945-0'>
+            <script>
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1642510542945-0');
+                });
+            </script>
+        </div>
+
+        <div id='div-gpt-ad-1642510542945-1'>
+            <script>
+                googletag.cmd.push(function() {
+                    googletag.display('div-gpt-ad-1642510542945-1');
+                });
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>
